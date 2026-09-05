@@ -1,0 +1,11 @@
+// Program to sort the items of an array
+
+let array = [5, 2, 8, 1, 9, 3];
+
+console.log("Original Array:", array);
+
+array.sort(function(a, b) {
+    return a - b;
+});
+
+console.log("Sorted Array:", array);

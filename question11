@@ -1,0 +1,20 @@
+// Program to find the smallest number in an array
+
+const readline = require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Enter integers separated by spaces: ", function(input) {
+
+    let numbers = input.split(" ").map(Number);
+
+    let smallest = Math.min(...numbers);
+
+    console.log("Array:", numbers);
+    console.log("Smallest Number:", smallest);
+
+    rl.close();
+});

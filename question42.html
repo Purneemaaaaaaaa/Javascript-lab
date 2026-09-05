@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Events</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #paragraph {
+            padding: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>JavaScript Button Events</h2>
+
+<button onclick="changeBackground()">
+    Change Background
+</button>
+
+<button onclick="changeParagraphBackground()">
+    Change Paragraph Background
+</button>
+
+<button onclick="hideParagraph()">
+    Hide Paragraph
+</button>
+
+<button onclick="showParagraph()">
+    Show Paragraph
+</button>
+
+<button onclick="increaseFont()">
+    Increase Font Size by 2pt
+</button>
+
+<button onclick="decreaseFont()">
+    Decrease Font Size by 2pt
+</button>
+
+<button onclick="resetFont()">
+    Reset Font into 12pt
+</button>
+
+<button onclick="changeTextColor()">
+    Change Text Color
+</button>
+
+<p id="paragraph">
+    This is a sample paragraph.
+    JavaScript can change the style and content
+    of HTML elements using events.
+</p>
+
+<script>
+
+let fontSize = 20;
+
+function changeBackground() {
+    document.body.style.backgroundColor = "lightblue";
+}
+
+function changeParagraphBackground() {
+    document.getElementById("paragraph")
+        .style.backgroundColor = "yellow";
+}
+
+function hideParagraph() {
+    document.getElementById("paragraph")
+        .style.display = "none";
+}
+
+function showParagraph() {
+    document.getElementById("paragraph")
+        .style.display = "block";
+}
+
+function increaseFont() {
+    fontSize += 2;
+
+    document.getElementById("paragraph")
+        .style.fontSize = fontSize + "pt";
+}
+
+function decreaseFont() {
+
+    if (fontSize > 2) {
+        fontSize -= 2;
+    }
+
+    document.getElementById("paragraph")
+        .style.fontSize = fontSize + "pt";
+}
+
+function resetFont() {
+
+    fontSize = 12;
+
+    document.getElementById("paragraph")
+        .style.fontSize = "12pt";
+}
+
+function changeTextColor() {
+    document.getElementById("paragraph")
+        .style.color = "red";
+}
+
+</script>
+
+</body>
+</html>

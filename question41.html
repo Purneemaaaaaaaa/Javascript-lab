@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Duplicate / Clone Rows</title>
+
+    <style>
+        table {
+            width: 80%;
+            margin: 30px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #222;
+            color: white;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 5px;
+        }
+
+        button {
+            padding: 7px 12px;
+            cursor: pointer;
+        }
+
+        .delete {
+            background-color: red;
+            color: white;
+            border: none;
+        }
+
+        .add {
+            margin-left: 10%;
+            background-color: green;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2 style="text-align:center;">
+    Duplicate / Clone Rows via JavaScript
+</h2>
+
+<table id="myTable">
+
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <td>1</td>
+
+            <td>
+                <select>
+                    <option>Select Product</option>
+                    <option>Laptop</option>
+                    <option>Mobile</option>
+                    <option>Keyboard</option>
+                </select>
+            </td>
+
+            <td>
+                <input type="number">
+            </td>
+
+            <td>
+                <button class="delete" onclick="removeRow(this)">
+                    🗑
+                </button>
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+<button class="add" onclick="addRow()">Add New</button>
+
+<script>
+
+function addRow() {
+
+    let table = document
+        .getElementById("myTable")
+        .getElementsByTagName("tbody")[0];
+
+    let firstRow = table.rows[0];
+
+    let newRow = firstRow.cloneNode(true);
+
+    newRow.querySelector("select").selectedIndex = 0;
+    newRow.querySelector("input").value = "";
+
+    table.appendChild(newRow);
+
+    updateNumbers();
+}
+
+function removeRow(button) {
+
+    let row = button.parentNode.parentNode;
+
+    row.remove();
+
+    updateNumbers();
+}
+
+function updateNumbers() {
+
+    let rows = document
+        .getElementById("myTable")
+        .getElementsByTagName("tbody")[0]
+        .rows;
+
+    for (let i = 0; i < rows.length; i++) {
+        rows[i].cells[0].innerHTML = i + 1;
+    }
+}
+
+</script>
+
+</body>
+</html>

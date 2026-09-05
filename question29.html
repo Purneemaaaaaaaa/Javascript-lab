@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Numbers 0 to 100</title>
+</head>
+
+<body>
+
+<h2>Numbers from 0 to 100</h2>
+
+<div id="container"></div>
+
+<script>
+
+    var container = document.getElementById("container");
+
+
+    // Function to check prime number
+    function isPrime(number) {
+
+        if (number < 2) {
+            return false;
+        }
+
+        for (var i = 2; i < number; i++) {
+
+            if (number % i === 0) {
+                return false;
+            }
+
+        }
+
+        return true;
+    }
+
+
+    // Create numbers from 0 to 100
+    for (var i = 0; i <= 100; i++) {
+
+        var numberBox = document.createElement("span");
+
+        numberBox.textContent = i;
+
+        numberBox.style.display = "inline-block";
+        numberBox.style.width = "50px";
+        numberBox.style.padding = "15px";
+        numberBox.style.margin = "5px";
+        numberBox.style.textAlign = "center";
+        numberBox.style.fontSize = "20px";
+
+
+        // Prime numbers
+        if (isPrime(i)) {
+            numberBox.style.backgroundColor = "red";
+        }
+
+        // Even numbers
+        else if (i % 2 === 0) {
+            numberBox.style.backgroundColor = "green";
+        }
+
+        // Odd numbers
+        else {
+            numberBox.style.backgroundColor = "yellow";
+        }
+
+
+        container.appendChild(numberBox);
+    }
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Manipulation</title>
+</head>
+
+<body>
+
+    <h2>DOM Manipulation</h2>
+
+    <p id="p1">First Paragraph</p>
+    <p id="p2">Second Paragraph</p>
+    <p id="p3">Third Paragraph</p>
+    <p id="p4">Fourth Paragraph</p>
+
+    <script>
+
+        // a. Get the first paragraph using tag name
+        var firstParagraph = document.querySelector("p");
+        console.log("First Paragraph:", firstParagraph.textContent);
+
+
+        // b. Get paragraphs using their IDs
+        var paragraph1 = document.querySelector("#p1");
+        var paragraph2 = document.querySelector("#p2");
+        var paragraph3 = document.querySelector("#p3");
+        var paragraph4 = document.querySelector("#p4");
+
+        console.log(paragraph1.textContent);
+        console.log(paragraph2.textContent);
+        console.log(paragraph3.textContent);
+        console.log(paragraph4.textContent);
+
+
+        // c. Get all paragraphs
+        var paragraphs = document.querySelectorAll("p");
+
+
+        // d. Loop through the NodeList
+        paragraphs.forEach(function(paragraph) {
+            console.log(paragraph.textContent);
+        });
+
+
+        // e. Set text content to fourth paragraph
+        paragraph4.textContent = "Fourth Paragraph";
+
+
+        // f. Set ID and class attributes
+        paragraph1.setAttribute("id", "first");
+        paragraph1.setAttribute("class", "paragraph");
+
+        paragraph2.setAttribute("id", "second");
+        paragraph2.setAttribute("class", "paragraph");
+
+        paragraph3.setAttribute("id", "third");
+        paragraph3.setAttribute("class", "paragraph");
+
+        paragraph4.setAttribute("id", "fourth");
+        paragraph4.setAttribute("class", "paragraph");
+
+
+        // g. Change style of each paragraph
+        paragraphs.forEach(function(paragraph) {
+            paragraph.style.border = "2px solid black";
+            paragraph.style.padding = "10px";
+            paragraph.style.margin = "10px";
+            paragraph.style.fontSize = "20px";
+            paragraph.style.fontFamily = "Arial";
+        });
+
+
+        // h. First and third green, second and fourth red
+        paragraphs.forEach(function(paragraph, index) {
+
+            if (index === 0 || index === 2) {
+                paragraph.style.color = "green";
+            } else {
+                paragraph.style.color = "red";
+            }
+
+        });
+
+
+        // i. Set text content, id and class
+        paragraph1.textContent = "First Paragraph";
+        paragraph2.textContent = "Second Paragraph";
+        paragraph3.textContent = "Third Paragraph";
+        paragraph4.textContent = "Fourth Paragraph";
+
+    </script>
+
+</body>
+
+</html>

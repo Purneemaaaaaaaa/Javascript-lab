@@ -1,0 +1,11 @@
+// Program to check whether an input is an array or not
+
+function isArray(input) {
+    return Array.isArray(input);
+}
+
+let input1 = [1, 2, 3, 4, 5];
+let input2 = "Hello";
+
+console.log("Input 1 is an array:", isArray(input1));
+console.log("Input 2 is an array:", isArray(input2));

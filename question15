@@ -1,0 +1,16 @@
+// Program to display colors with their choices
+
+var color = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+var o = ["th", "st", "nd", "rd"];
+
+for (var i = 0; i < color.length; i++) {
+    var choice;
+
+    if (i + 1 <= 3) {
+        choice = o[i + 1];
+    } else {
+        choice = o[0];
+    }
+
+    console.log((i + 1) + choice + " choice is " + color[i] + ".");
+}

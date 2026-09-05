@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BOM Information</title>
+</head>
+
+<body>
+
+<h2>Browser Information</h2>
+
+<button onclick="showInfo()">Show Browser Information</button>
+
+<div id="result"></div>
+
+<script>
+function showInfo() {
+
+    let result = document.getElementById("result");
+
+    result.innerHTML =
+        "<p><b>User Agent:</b> " + navigator.userAgent + "</p>" +
+        "<p><b>Language:</b> " + navigator.language + "</p>" +
+        "<p><b>Platform:</b> " + navigator.platform + "</p>" +
+        "<p><b>Online Status:</b> " + navigator.onLine + "</p>";
+}
+</script>
+
+</body>
+</html>

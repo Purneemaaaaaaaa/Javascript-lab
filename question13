@@ -1,0 +1,8 @@
+// Program to join all elements of an array into a string
+
+let array = ["Red", "Green", "Blue", "Yellow"];
+
+let result = array.join(",");
+
+console.log("Original Array:", array);
+console.log("Joined String:", result);

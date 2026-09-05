@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>50 Countries</title>
+</head>
+
+<body>
+
+<h2>50 Countries</h2>
+
+<table border="1" cellpadding="10" cellspacing="0">
+    <tbody id="countryTable"></tbody>
+</table>
+
+<script>
+
+    var countries = [
+        "Nepal",
+        "India",
+        "China",
+        "Japan",
+        "South Korea",
+        "Bhutan",
+        "Bangladesh",
+        "Pakistan",
+        "Sri Lanka",
+        "Afghanistan",
+        "Thailand",
+        "Malaysia",
+        "Singapore",
+        "Indonesia",
+        "Philippines",
+        "Vietnam",
+        "Myanmar",
+        "Australia",
+        "New Zealand",
+        "Canada",
+        "United States",
+        "Mexico",
+        "Brazil",
+        "Argentina",
+        "Chile",
+        "Peru",
+        "Colombia",
+        "United Kingdom",
+        "France",
+        "Germany",
+        "Italy",
+        "Spain",
+        "Portugal",
+        "Netherlands",
+        "Belgium",
+        "Switzerland",
+        "Austria",
+        "Norway",
+        "Sweden",
+        "Denmark",
+        "Finland",
+        "Russia",
+        "Turkey",
+        "Egypt",
+        "South Africa",
+        "Nigeria",
+        "Kenya",
+        "Ghana",
+        "Morocco",
+        "Saudi Arabia"
+    ];
+
+
+    var table = document.getElementById("countryTable");
+
+
+    // Display 6 countries in each row
+    for (var i = 0; i < countries.length; i += 6) {
+
+        var row = document.createElement("tr");
+
+        for (var j = i; j < i + 6 && j < countries.length; j++) {
+
+            var cell = document.createElement("td");
+
+            cell.textContent = countries[j];
+
+            row.appendChild(cell);
+        }
+
+        table.appendChild(row);
+    }
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History Object</title>
+</head>
+
+<body>
+
+<h2>Browser History</h2>
+
+<p id="length"></p>
+
+<button onclick="goBack()">Previous Page</button>
+<button onclick="goForward()">Next Page</button>
+<button onclick="goPages()">Go Pages</button>
+
+<script>
+function showLength() {
+    document.getElementById("length").innerHTML =
+        "History Length: " + history.length;
+}
+
+function goBack() {
+    history.back();
+}
+
+function goForward() {
+    history.forward();
+}
+
+function goPages() {
+    let pages = prompt("Enter number of pages to move:");
+
+    if (pages !== null) {
+        history.go(Number(pages));
+    }
+}
+
+showLength();
+</script>
+
+</body>
+</html>

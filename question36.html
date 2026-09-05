@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser Window</title>
+</head>
+
+<body>
+
+<h2>Browser Window Control</h2>
+
+<button onclick="openWindow()">Open Window</button>
+<button onclick="closeWindow()">Close Window</button>
+<button onclick="resizeWindow()">Resize Window</button>
+
+<h3>Window Properties</h3>
+
+<p id="info"></p>
+
+<script>
+let newWindow;
+
+function openWindow() {
+    newWindow = window.open(
+        "",
+        "myWindow",
+        "width=500,height=400"
+    );
+
+    if (newWindow) {
+        newWindow.document.write(
+            "<h2>New Browser Window</h2>"
+        );
+    }
+}
+
+function closeWindow() {
+    if (newWindow) {
+        newWindow.close();
+    }
+}
+
+function resizeWindow() {
+    if (newWindow) {
+        newWindow.resizeTo(800, 600);
+        newWindow.focus();
+    }
+}
+
+function showInfo() {
+
+    document.getElementById("info").innerHTML =
+        "Inner Width: " + window.innerWidth + "<br>" +
+        "Inner Height: " + window.innerHeight + "<br>" +
+        "Outer Width: " + window.outerWidth + "<br>" +
+        "Outer Height: " + window.outerHeight;
+}
+
+showInfo();
+
+window.onresize = showInfo;
+</script>
+
+</body>
+</html>

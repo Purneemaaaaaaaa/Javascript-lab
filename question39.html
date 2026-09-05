@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+
+    <style>
+        body {
+            text-align: center;
+            background: linear-gradient(90deg, purple, blue);
+            color: white;
+            font-family: Arial;
+        }
+
+        h1 {
+            margin-top: 40px;
+        }
+
+        .clock {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .box {
+            background-color: white;
+            color: black;
+            font-size: 40px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .colon {
+            font-size: 40px;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>DIGITAL CLOCK</h1>
+
+<div class="clock">
+
+    <div class="box" id="hour">00</div>
+    <div class="colon">:</div>
+
+    <div class="box" id="minute">00</div>
+    <div class="colon">:</div>
+
+    <div class="box" id="second">00</div>
+
+</div>
+
+<script>
+function clock() {
+
+    let now = new Date();
+
+    let hour = now.getHours();
+    let minute = now.getMinutes();
+    let second = now.getSeconds();
+
+    hour = String(hour).padStart(2, "0");
+    minute = String(minute).padStart(2, "0");
+    second = String(second).padStart(2, "0");
+
+    document.getElementById("hour").innerHTML = hour;
+    document.getElementById("minute").innerHTML = minute;
+    document.getElementById("second").innerHTML = second;
+}
+
+setInterval(clock, 1000);
+
+clock();
+</script>
+
+</body>
+</html>

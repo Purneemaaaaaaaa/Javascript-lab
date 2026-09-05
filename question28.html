@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Challenge</title>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <h1 id="year"></h1>
+
+    <h2>7 Days of JS Challenge</h2>
+
+    <p id="datetime"></p>
+
+    <ul>
+        <li>Python Challenge Done</li>
+        <li>JavaScript Challenge Ongoing</li>
+        <li>React Challenge Coming</li>
+        <li>Full Stack Challenge Coming</li>
+        <li>Data Analysis Challenge Coming</li>
+        <li>React Native Challenge Coming</li>
+        <li>Machine Learning Challenge Coming</li>
+    </ul>
+
+</div>
+
+<script>
+
+    // a. Year changes every 1 second
+    var year = document.getElementById("year");
+
+    setInterval(function() {
+        year.textContent = new Date().getFullYear();
+    }, 1000);
+
+
+    // b. Date and time
+    var datetime = document.getElementById("datetime");
+
+    setInterval(function() {
+        datetime.textContent = new Date().toLocaleString();
+    }, 1000);
+
+
+    // Change date/time background every second
+    setInterval(function() {
+        datetime.style.backgroundColor =
+            "rgb(" +
+            Math.floor(Math.random() * 256) + "," +
+            Math.floor(Math.random() * 256) + "," +
+            Math.floor(Math.random() * 256) + ")";
+
+        datetime.style.padding = "10px";
+
+    }, 1000);
+
+
+    // c, d, e. Challenge colors
+    var challenges = document.querySelectorAll("li");
+
+    challenges.forEach(function(challenge) {
+
+        var text = challenge.textContent;
+
+        if (text.includes("Done")) {
+            challenge.style.backgroundColor = "green";
+        }
+        else if (text.includes("Ongoing")) {
+            challenge.style.backgroundColor = "yellow";
+        }
+        else if (text.includes("Coming")) {
+            challenge.style.backgroundColor = "red";
+        }
+
+        challenge.style.padding = "10px";
+        challenge.style.margin = "5px";
+    });
+
+</script>
+
+</body>
+
+</html>
